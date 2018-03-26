@@ -49,3 +49,33 @@ var moveZeros = function(nums)
 
 	alert(nums);
 }
+
+//#349
+var collectIntersection = function(nums1, nums2)
+{
+	var target;
+	var compareBase;
+	var result = [];
+
+	if(nums1.length > nums2.length)
+	{
+		compareBase = nums1;
+		target = nums2;
+	}
+	else
+	{
+		compareBase = nums2;
+		target = nums1;	
+	}
+
+	for (var x = 0; x < target.length; x++) 
+	{
+		var value = target[x];
+
+		if(compareBase.indexOf(value) > -1 && result.indexOf(value) == -1){
+			result.push(value);
+		}	
+	}
+
+	alert(result);
+}
