@@ -21,6 +21,22 @@
 
 		//#349 Collect intersection between two arrays
 		collectIntersection([1, 2, 3], [4, ,5 ,6 ,7, 3, 2]);
+
+
+		//#226 InverseTree
+		//[1][2,3][4,5,6,7]
+		var node1 = new TreeNode(1);
+		var node2 = new TreeNode(2);
+		var node3 = new TreeNode(3);
+		node2.left = new TreeNode(4);
+		node2.right = new TreeNode(5);
+		node3.left = new TreeNode(6);
+		node3.right = new TreeNode(7);
+		node1.left = node2;
+		node1.right = node3;
+
+		inverseTree(node1);
+
 	</script>
 </body>
 </html>

@@ -79,3 +79,26 @@ var collectIntersection = function(nums1, nums2)
 
 	alert(result);
 }
+
+
+//#226
+function TreeNode(val){
+	this.val = val;
+	this.left = null;
+	this.right = null;
+}
+
+var inverseTree = function(rootNode)
+{
+	if(rootNode === null || (rootNode.left === null && rootNode.right === null))
+	{
+		return rootNode;
+	}
+
+	var temp = rootNode.left;
+	rootNode.left = inverseTree(rootNode.right);
+	rootNode.right = inverseTree(temp);
+
+	return rootNode;
+}
+
