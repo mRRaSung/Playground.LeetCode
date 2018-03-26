@@ -102,3 +102,28 @@ var inverseTree = function(rootNode)
 	return rootNode;
 }
 
+//#804 Morse, filter same output
+var uniqueMorseRepresentations = function(words) {
+    var morse = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."];
+    
+	var resultDiff = [];
+
+    for(var i = 0; i < words.length; i++)
+    {    
+        var codeBuilder = '';
+        
+        for(var x = 0; x < words[i].length; x++)
+        {
+            codeBuilder += morse[words[i].charCodeAt(x) - 97];
+        }
+
+        if(resultDiff.indexOf(codeBuilder) == -1)
+        {
+        	resultDiff.push(codeBuilder);
+        	alert(codeBuilder);
+        }
+    }
+
+    alert(resultDiff.length);
+};
+
