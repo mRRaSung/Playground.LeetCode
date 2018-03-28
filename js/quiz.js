@@ -4,17 +4,25 @@ var IsAlert = false;
 var reverseString = function(s){
 
 	var result = "";
+
 	var ary = s.split('');
-
-	for (var i = ary.length - 1; i >= 0; i--) {
+	for (var i = ary.length - 1; i >= 0; i--)
 		result += ary[i];
-	}
-
-	if(IsAlert)
-		alert(result);
 
 	return result;
 }
+var reverseString_v2 = function(s){
+	return s.split("").reverse().join("");
+}
+var reverseString_v3 = function(s){
+	//Recursive
+	if(s.length === 0)
+		return s;
+	else
+		return reverseString_v3(s.substring(1)) + s.charAt(0);
+}
+
+
 
 //#292
 var canWin = function(n){

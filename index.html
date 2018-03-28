@@ -8,10 +8,13 @@
 
 
 	<script src="js/quiz.js"></script>
+	<script src="js/binay-tree.js"></script>
 	<script>
 		//#344 
 		//Write a function that takes a string as input and returns the string reversed
 		reverseString('Hello');
+		reverseString_v2('Hello');
+		alert(reverseString_v3('Hello'));
 
 		//#292 Get 3 / End to win
 		canWin(8);
@@ -45,9 +48,27 @@
 		numJewelsInStones('aA', 'aAAbbbb')
 
 		//#595 SQL, where (too easy to pass)
+		//#627 SQL, case (too easy to pass)
 
 		//#657 Judge Route Circle
 		judgeCircle('UDLR');
+
+
+
+
+
+
+		var node = new Node(5);
+		node.insert(3);
+		node.insert(9);
+		node.insert(4);
+		node.insert(2);
+		node.insert(8);
+		node.insert(10);
+		node.printByBreadthFirst();
+
+		//Test
+		recursive(5);
 
 	</script>
 </body>
