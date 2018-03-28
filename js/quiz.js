@@ -1,3 +1,5 @@
+var IsAlert = false;
+
 //#344
 var reverseString = function(s){
 
@@ -8,7 +10,9 @@ var reverseString = function(s){
 		result += ary[i];
 	}
 
-	alert(result);
+	if(IsAlert)
+		alert(result);
+
 	return result;
 }
 
@@ -26,7 +30,9 @@ var canWin = function(n){
 		result = n % 4 != 0;
 	}
 
-	alert(result);
+	if(IsAlert)
+		alert(result);
+
 	return result;
 }
 
@@ -47,7 +53,8 @@ var moveZeros = function(nums)
 		nums[index] = 0;
 	}
 
-	alert(nums);
+	if(IsAlert)
+		alert(nums);
 }
 
 //#349
@@ -77,7 +84,8 @@ var collectIntersection = function(nums1, nums2)
 		}	
 	}
 
-	alert(result);
+	if(IsAlert)
+		alert(result);
 }
 
 
@@ -102,7 +110,7 @@ var inverseTree = function(rootNode)
 	return rootNode;
 }
 
-//#804 Morse, filter same output
+//#804
 var uniqueMorseRepresentations = function(words) {
     var morse = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."];
     
@@ -120,10 +128,72 @@ var uniqueMorseRepresentations = function(words) {
         if(resultDiff.indexOf(codeBuilder) == -1)
         {
         	resultDiff.push(codeBuilder);
-        	alert(codeBuilder);
         }
     }
 
-    alert(resultDiff.length);
+    if(IsAlert)
+    	alert(resultDiff.length);
+};
+
+/**
+ * #771 Jewels and Stones
+ * @param {string} J
+ * @param {string} S
+ * @return {number}
+ */
+var numJewelsInStones = function(J, S) {
+    
+    var aryJ = Array.from(J);
+    var aryS = Array.from(S);
+
+	var count = 0;
+
+	for (var x = 0; x < aryJ.length; x++) {
+		for (var y = 0; y < aryS.length; y++) {
+			if(aryJ[x] === aryS[y])
+				count++;
+	    }
+	}
+
+	if(IsAlert)
+		alert(count);
+
+	return count;
+};
+
+
+/**
+ * #657 Judge Route Circle
+ * @param {string} moves
+ * @return {boolean}
+ */
+var judgeCircle = function(moves) {
+    
+    var vertical = 0;
+    var horizon = 0;
+    
+    var aryMoves = Array.from(moves);
+    
+    for(var i = 0; i < aryMoves.length; i++)
+    {
+        switch(aryMoves[i])
+        {
+            case 'R':
+                ++horizon;
+                break;
+            case 'L':
+                --horizon;
+                break;
+            case 'U':
+                ++vertical;
+                break;
+            case 'D':
+                --vertical;
+                break;
+        }
+    }
+    
+    return (vertical === 0 && horizon === 0);
+    
 };
 
