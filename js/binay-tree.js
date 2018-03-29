@@ -59,7 +59,36 @@ Node.prototype.printByDepthFist = function()
 
 Node.prototype.printByBreadthFirst = function()
 {
-	
+	let queue = [this];
+
+	while(queue.length)
+	{
+		//Return first object of array, also remove first object in array
+		let treeNode = queue.shift();
+		console.log(treeNode.Value);
+
+		if(treeNode.Left)
+			queue.push(treeNode.Left);
+
+		if(treeNode.Right)
+			queue.push(treeNode.Right);
+	}
+}
+
+Node.prototype.getMinVal = function()
+{
+	if(!this.Left)
+		return this.Value;
+	else
+		return this.Left.getMinVal();
+}
+
+Node.prototype.getMaxVal = function()
+{
+	if(!this.Right)
+		return this.Value;
+	else
+		return this.Right.getMaxVal();
 }
 
 
